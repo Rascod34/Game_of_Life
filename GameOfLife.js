@@ -4,14 +4,28 @@ class GameOfLife {
     this.height = height;
     this.board = this.makeBoard();
   }
-
+ 
+    
   /**
    * Returns a 2D Array
    */
-
-  makeBoard() {
+  
+  makeBoard(row,col) {
     // TODO: Create and return an 2D Array
+    col = this.height
+    row = this.width
+    let arr = []
+   var helper_arr = []
     // with `this.heigh` as rows and `this.width` as cols.
+   for (let i = 0; i < this.width; i++){
+     helper_arr[i] = 0;
+   }
+   for(let j = 0; j <this.height; j++){
+     arr.push(helper_arr)
+   }
+  return arr;
+  }
+  
     // For example, given a height of 4 and a width of 3, it will generate:
     // [
     //  [0, 0, 0],
@@ -19,8 +33,9 @@ class GameOfLife {
     //  [0, 0, 0],
     //  [0, 0, 0],
     // ]
-  }
+    
 
+  
   /**
    * Return the amount of living neighbors around a given coordinate.
    */
